@@ -5,3 +5,8 @@
 <h2>フリーランス</h2>
 <%= link_to  "もっとみる", "#" %>
 <h2>アクセス</h2>
+<h2>ニュース一覧</h2>
+<% @topics.each do |topic| %>
+  <%= topic.title %>
+  <%= topic.contents %>
+<% end %>
