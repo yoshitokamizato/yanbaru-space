@@ -6,7 +6,7 @@
 <%= link_to  "もっとみる", "#" %>
 <h2>アクセス</h2>
 <h2>ニュース一覧</h2>
-<% @news.each do |new| %>
-  <%= new.title %>
-  <%= new.contents %>
+<% @topics.each do |topic| %>
+  <%= topic.title %>
+  <%= topic.contents %>
 <% end %>
