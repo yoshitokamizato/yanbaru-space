@@ -9,12 +9,15 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  # google認証設定
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], scope: 'email', redirect_uri: "#{ENV['HOST']}/users/auth/google_oauth2/callback"
+  OmniAuth.config.logger = Rails.logger if Rails.env.development?
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '29f1fd88008e6371f89df7c6dfbc461b20590865309f0877c045487a683add889ae08da90fecffe0af52264e97930fc583025ee278a2e31a20901ee0e316b36c'
+  # config.secret_key = '7b487f73306a79e0f87a35c9aeafdd40399712d10ef580601edeb51001710e7d36d0c8ed2d065ff81df9f6801d501477d48c3ab254a748818bdb41c20615f863'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +129,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'c915e6f4731229791d66bb5f45b90e911f6774bfeadea8da286e6e35a551af8e26ee91c135f52f9d61f4fa8aff775f5835562b95ef0ea67d29061d1d034044cc'
+  # config.pepper = '7770b8bac87ce92e49cb6d6845f12cb4c2a5f957bb69231ff33dd65b0fe2f774ab4b50b4793e75e935c19e4e4567186cb08d0aa4f9690665e4a0be3be770f5c1'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -178,7 +181,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 6..128
+  config.password_length = 8..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
