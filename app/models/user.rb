@@ -11,7 +11,7 @@ class User < ApplicationRecord
     # Regexp extracted from https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
     return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])$/
 
-    errors.add :password, '：1文字以上の大文字、小文字、記号を使用し全部で8文字以上にしてください'
+    errors.add :password, '：1文字以上の大文字、小文字、記号を使用してください'
   end
 
   # omniauthのコールバック時に呼ばれるメソッド
