@@ -15,7 +15,7 @@
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "nav-item nav-link active ml-4 h6"  %>
       </li>
       <li class="nav-item">
-        <a class="nav-item nav-link active ml-4 h6" href="#">マイページ</a>
+        <%= link_to "マイページ", user_path(current_user), class: "nav-item nav-link active ml-4 h6"%>
       </li>
     <% else %>
       <li class="nav-item">
