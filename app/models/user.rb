@@ -10,8 +10,10 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def password_complexity
-    return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,70}$/
-    errors.add :password, '：1文字以上の大文字、小文字、記号を使用し全部で8文字以上にしてください'
+    unless self.provider == "google_oauth2"
+      return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,70}$/
+      errors.add :password, '：1文字以上の大文字、小文字、記号を使用してください'
+    end
   end
 
   # omniauthのコールバック時に呼ばれるメソッド
