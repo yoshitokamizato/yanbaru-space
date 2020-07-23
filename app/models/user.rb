@@ -10,15 +10,12 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def password_complexity
-    unless @controller_name == "OmniauthCallbacksController"
-      return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,70}$/
-      errors.add :password, '：1文字以上の大文字、小文字、記号を使用し全部で8文字以上にしてください'
-    end
+    return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,70}$/
+    errors.add :password, '：1文字以上の大文字、小文字、記号を使用し全部で8文字以上にしてください'
   end
 
   # omniauthのコールバック時に呼ばれるメソッド
-  def self.from_omniauth(auth, controller_name)
-    @controller_name = controller_name
+  def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[8,20]

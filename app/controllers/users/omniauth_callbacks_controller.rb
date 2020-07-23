@@ -8,7 +8,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # common callback method
   def callback_for(provider)
     auth = request.env["omniauth.auth"]
-    @user = User.from_omniauth(auth, "OmniauthCallbacksController")
+    @user = User.from_omniauth(auth)
     session[:google_image] = auth.info.image
 
     if @user.persisted?
@@ -18,10 +18,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.#{provider}_data"] = request.env["omniauth.auth"].except("extra")
       redirect_to new_user_registration_url
     end
+  rescue ActiveRecord::RecordInvalid => e
+    redirect_to new_user_registration_url, flash: { errors: e.record.errors.full_messages }
   end
-
-  def failure
-    redirect_to root_path
-  end
-
 end
