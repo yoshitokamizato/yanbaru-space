@@ -13,7 +13,7 @@
 <% if @user.image.present? %>
   <img src="<%= @user.image %>" class = "icon_image">
 <% else %>
-  <img src="<%= @user.google_image %>" class = "icon_image">
+  <img src="<%= session[:google_image] %>" class = "icon_image">
 <% end %>
 
 <h2>イベント</h2>
