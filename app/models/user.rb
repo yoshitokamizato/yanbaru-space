@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[google_oauth2] #複数追加したいとき -> %i[facebook twitter google_oauth2]
 
-  validate :password_complexity
+  # validate :password_complexity
   validates :image, presence: true
 
   mount_uploader :image, ImageUploader
