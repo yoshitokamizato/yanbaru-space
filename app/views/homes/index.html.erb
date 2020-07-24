@@ -1,3 +1,21 @@
+<style>
+  .icon_image {
+    width: 200px;
+    height: 200px;
+  //サイズ指定
+  border-radius: 100px;
+  //画像を丸くする
+  object-fit: cover;
+  //タテヨコ比を変えないままトリミング
+  }
+</style>
+
+<% if @user.image.present? %>
+  <img src="<%= @user.image %>" class = "icon_image">
+<% else %>
+  <img src="<%= session[:google_image] %>" class = "icon_image">
+<% end %>
+
 <h2>イベント</h2>
 <%= link_to  "もっとみる", "#" %>
 <h2>メニュー</h2>

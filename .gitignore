@@ -44,3 +44,10 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# IDEの設定ファイル
+.idea
+
+# アップロード画像
+/public/uploads/tmp
+public/uploads/user/image

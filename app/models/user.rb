@@ -7,18 +7,20 @@ class User < ApplicationRecord
 
   validate :password_complexity
 
-  def password_complexity
-    # Regexp extracted from https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
-    return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])$/
+  mount_uploader :image, ImageUploader
 
-    errors.add :password, '：1文字以上の大文字、小文字、記号を使用してください'
+  def password_complexity
+    unless self.provider == "google_oauth2"
+      return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,70}$/
+      errors.add :password, '：1文字以上の大文字、小文字、記号を使用してください'
+    end
   end
 
   # omniauthのコールバック時に呼ばれるメソッド
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
       user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
+      user.password = Devise.friendly_token[8,20]
     end
   end
 end
