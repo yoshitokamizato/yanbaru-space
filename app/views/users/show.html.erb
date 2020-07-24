@@ -6,7 +6,16 @@
   </div>
 
   <div class="profile">
-    <label>Eメールアドレス：</label> <%= @user.email %>
+    <div class="image">
+      <% if @user.image? %>
+        <%= image_tag @user.image.url %>
+      <% else %>
+        <%= image_tag "noimage.gif" %>
+      <% end %>
+    </div>
+    <div class="email">
+      <label>Eメールアドレス：</label> <%= @user.email %>
+    </div>
   </div>
 
   <div class="btn_group">
