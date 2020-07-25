@@ -34,6 +34,9 @@ group :development, :test do
 
   # デバッグ
   gem 'pry-byebug'
+
+  # ダミーデータ投入
+  gem 'faker'
 end
 
 group :development do
