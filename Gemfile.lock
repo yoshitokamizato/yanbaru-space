@@ -109,6 +109,8 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.9.0)
+    faker (2.13.0)
+      i18n (>= 1.6, < 2)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.13.1)
@@ -318,6 +320,7 @@ DEPENDENCIES
   devise
   devise-i18n
   dotenv-rails
+  faker
   jbuilder (~> 2.7)
   listen (~> 3.2)
   omniauth-google-oauth2
