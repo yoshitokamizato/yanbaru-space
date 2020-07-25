@@ -47,3 +47,7 @@ yarn-debug.log*
 
 # IDEの設定ファイル
 .idea
+
+# アップロード画像
+/public/uploads/tmp
+public/uploads/user/image
