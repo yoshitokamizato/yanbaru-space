@@ -4,7 +4,24 @@
 <%= link_to  "もっとみる", "#" %>
 <h2>フリーランス</h2>
 <%= link_to  "もっとみる", "#" %>
-<h2>アクセス</h2>
+
+<div class="access">
+ <h2>アクセス</h2>
+ <div class="row">
+   <div class="col-md-6">
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.2145518941097!2d128.00036311501432!3d26.60956877948031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e45731efe628b9%3A0x589e72d37d8c73e0!2sYANBARUSPACE!5e0!3m2!1sja!2sjp!4v1595573156840!5m2!1sja!2sjp" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+   </div>
+   <div class="col-md-6 rignt">
+     <h4>住所</h4>
+     <p>〒905-1152 <br>沖縄県名護市字伊差川134−2</p>
+     <h4>電話番号</h4>
+     <p><a href="tel:090-8801-9200">090-8801-9200</a></p>
+     <h4>営業時間</h4>
+     <p>10:00~17:00</p>
+   </div>
+ </div>
+</div>
+
 <h2>ニュース一覧</h2>
 <% @topics.each do |topic| %>
   <%= topic.title %>
