@@ -11,8 +11,17 @@
 
   <h2>イベント</h2>
   <%= link_to  "もっとみる", "#" %>
+
   <h2>メニュー</h2>
-  <%= link_to  "もっとみる", "#" %>
+  <% @menus.each do |menu| %>
+    <p>
+      <%= menu.name %>
+      <%= menu.price %>
+      <%= menu.description %>
+    </p>
+  <% end %>
+  <%= link_to  "もっとみる", menus_path %>
+
   <h2>フリーランス</h2>
   <%= link_to  "もっとみる", "#" %>
 

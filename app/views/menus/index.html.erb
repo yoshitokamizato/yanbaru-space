@@ -1,0 +1,8 @@
+<h2>メニュ一覧</h2>
+<% @menus.each do |menu| %>
+  <p>
+    <%= menu.name %>
+    <%= menu.price %>
+    <%= menu.description %>
+  </p>
+<% end %>
