@@ -13,13 +13,7 @@
   <%= link_to  "もっとみる", "#" %>
 
   <h2>メニュー</h2>
-  <% @menus.each do |menu| %>
-    <p>
-      <%= menu.name %>
-      <%= menu.price %>
-      <%= menu.description %>
-    </p>
-  <% end %>
+  <%= render partial: 'layouts/menu', collection: @menus %>
   <%= link_to  "もっとみる", menus_path %>
 
   <h2>フリーランス</h2>
