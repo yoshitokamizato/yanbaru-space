@@ -28,7 +28,7 @@ User.delete_all
   nickname = Faker::Name.name
   image = Faker::Types.rb_string
   password = "AAaa#{Faker::Internet.password(mix_case: true, special_characters: true)}#{Faker::Number.number(digits: 10)}"
-  email = Faker::Internet.email
+  email = Faker::Internet.unique.email
 
   user_params << { nickname: nickname, image: image, password: password, email: email }
 end
