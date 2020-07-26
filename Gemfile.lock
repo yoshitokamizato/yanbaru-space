@@ -322,6 +322,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   jbuilder (~> 2.7)
+  kaminari
   listen (~> 3.2)
   omniauth-google-oauth2
   pg

@@ -3,7 +3,11 @@
 <h2>メニュー</h2>
 <%= link_to  "もっとみる", "#" %>
 <h2>フリーランス</h2>
-<%= link_to  "もっとみる", "#" %>
+<div class="user">
+  <%= render partial: "homes/user" %>
+  <%= link_to_next_page @users, 'もっと見る', remote: true, params: { type: :user }, id: 'more-user' %>
+</div>
+
 
 <div class="access">
  <h2>アクセス</h2>
