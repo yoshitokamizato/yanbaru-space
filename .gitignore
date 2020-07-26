@@ -49,5 +49,4 @@ yarn-debug.log*
 .idea
 
 # アップロード画像
-/public/uploads/tmp
-public/uploads/user/image
+/public/uploads/
