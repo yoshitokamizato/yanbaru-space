@@ -4,8 +4,19 @@
 <%= link_to  "もっとみる", "#" %>
 <h2>フリーランス</h2>
 <div class="user">
-  <%= render partial: "homes/user" %>
-  <%= link_to_next_page @users, 'もっと見る', remote: true, params: { type: :user }, id: 'more-user' %>
+  <div class="row">
+      <% @users.each do |user| %>
+      <div class="col-md-2 col-md-offset-3">
+        <div class="card">
+         <img src="<%= user.image %>" class="card-img-top">
+         <div class="card-body">
+           <p class="card-text"><%= user.nickname %></p>
+         </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  <%= link_to "もっとみる", users_path %>
 </div>
 
 
