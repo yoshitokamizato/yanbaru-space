@@ -2,6 +2,6 @@ class HomesController < ApplicationController
   def index
     @topics = Topic.first(5)
 
-    @user = User.find(current_user.id)
+    @user = User.first(5)
   end
 end
