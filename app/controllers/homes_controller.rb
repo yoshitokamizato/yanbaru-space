@@ -1,9 +1,7 @@
 class HomesController < ApplicationController
   def index
     @topics = Topic.all
-  end
   
-  def logging_user
-    @user = User.find(current_user.id)
+    @user = User.first(5)
   end
 end
