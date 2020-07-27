@@ -1,8 +1,2 @@
 <h2>トピックス一覧</h2>
-<% @topics.each do |topic| %>
-  <p>
-    <%= topic.updated_at.strftime('%Y/%m/%d') %>
-    <%= topic.title %>
-    <%= topic.contents %>
-  </p>
-<% end %>
+<%= render @topics %>

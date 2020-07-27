@@ -1,12 +1,6 @@
 <section id="homes">
   <h2>トピックス</h2>
-  <% @topics.each do |topic| %>
-    <p>
-      <%= topic.updated_at.strftime('%Y/%m/%d') %>
-      <%= topic.title %>
-      <%= topic.contents %>
-    </p>
-  <% end %>
+  <%= render @topics %>
   <%= link_to "もっとみる", topics_path %>
 
   <h2>イベント</h2>
