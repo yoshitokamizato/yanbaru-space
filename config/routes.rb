@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'homes#index'
   resources :users
   resources :topics, only: :index
+  resources :menus, only: :index
 end
