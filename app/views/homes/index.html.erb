@@ -22,19 +22,16 @@
 
 <section id="homes">
   <h2>トピックス</h2>
-  <% @topics.each do |topic| %>
-    <p>
-      <%= topic.updated_at.strftime('%Y/%m/%d') %>
-      <%= topic.title %>
-      <%= topic.contents %>
-    </p>
-  <% end %>
+  <%= render @topics %>
   <%= link_to "もっとみる", topics_path %>
   
   <h2>イベント</h2>
   <%= link_to  "もっとみる", "#" %>
+
   <h2>メニュー</h2>
-  <%= link_to  "もっとみる", "#" %>
+  <%= render @menus %>
+  <%= link_to  "もっとみる", menus_path %>
+
   <h2>フリーランス</h2>
   <%= link_to  "もっとみる", "#" %>
 
