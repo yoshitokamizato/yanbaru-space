@@ -37,5 +37,3 @@ end
 Menu.create!(menu_params)
 Topic.create!(topic_params)
 User.create!(user_params)
-
-puts "初期データの投入に成功しました！"AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
