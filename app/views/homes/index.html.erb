@@ -1,8 +1,30 @@
+
+<h2>イベント</h2>
+<%= link_to  "もっとみる", "#" %>
+<h2>メニュー</h2>
+<%= link_to  "もっとみる", "#" %>
+<h2>フリーランス</h2>
+<div class="user">
+  <div class="row">
+      <% @users.each do |user| %>
+      <div class="col-md-2 col-md-offset-3">
+        <div class="card">
+         <img src="<%= user.image %>" class="card-img-top">
+         <div class="card-body">
+           <p class="card-text"><%= user.nickname %></p>
+         </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  <%= link_to "もっとみる", users_path %>
+</div>
+
 <section id="homes">
   <h2>トピックス</h2>
   <%= render @topics %>
   <%= link_to "もっとみる", topics_path %>
-
+  
   <h2>イベント</h2>
   <%= link_to  "もっとみる", "#" %>
 
