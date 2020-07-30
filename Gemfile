@@ -23,6 +23,7 @@ gem 'devise-i18n'
 # 環境変数
 gem 'dotenv-rails'
 
+# 管理者画面
 gem 'activeadmin'
 
 # 画像投稿
