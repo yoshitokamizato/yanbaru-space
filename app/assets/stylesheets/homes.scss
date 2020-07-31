@@ -1,21 +1,29 @@
 #homes {
-    .access .right {
-        padding-left: 40px;
-        text-align: left;
-    }
-}
+  h2{
+    margin: 60px 0 20px 0;
+    font-size: 30px;
+  }
 
-.user .card {
-    border: solid 1px black;
+  .access .right {
+      padding-left: 40px;
+      text-align: left;
+  }
+
+  // ユーザーのカード定義
+  .user .card{
     margin: 10px;
     width: 130px;
     height: 160px;
-}
-.user .card-img-top {
+  }
+  .user img{
     width: 128px;
     height: 110px;
-}
-.user .card-body p {
+  }
+  .user .card-body p{
     font-size: 10px;
-    word-wrap: normal;
+  }
+
+  .users-card {
+    text-align: center;
+  }
 }
