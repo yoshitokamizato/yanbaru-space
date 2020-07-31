@@ -4,3 +4,18 @@
         text-align: left;
     }
 }
+
+.user .card {
+    border: solid 1px black;
+    margin: 10px;
+    width: 130px;
+    height: 160px;
+}
+.user .card-img-top {
+    width: 128px;
+    height: 110px;
+}
+.user .card-body p {
+    font-size: 10px;
+    word-wrap: normal;
+}
