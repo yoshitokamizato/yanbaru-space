@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :users
   resources :topics, only: :index
   resources :menus, only: :index
+  resources :events, only: :index
 end
