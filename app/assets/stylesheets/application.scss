@@ -7,9 +7,14 @@
 
 
 
-main {
+main
+ {
   max-width: 800px;
   margin: 0 auto;
+}
+.home_contents h2{
+  text-align: center;
+  margin: 40px 0;
 }
 
 // 大デバイス（デスクトップ, 1200px 未満）
@@ -28,6 +33,9 @@ main {
 .user img{
   width: 128px;
   height: 110px;
+}
+.user .card-body p{
+  font-size: 10px;
 }
 
 
