@@ -1,11 +1,13 @@
-<div class="home_contents">
-  <section id="homes">
-    <h2>トピックス</h2>
-    <%= render @topics %>
-    <%= link_to "もっとみる", topics_path %>
 
-    <h2>イベント</h2>
-    <%= link_to  "もっとみる", "#" %>
+<div class="home_contents">
+<section id="homes">
+  <h2>トピックス</h2>
+  <%= render @topics %>
+  <%= link_to "もっとみる", topics_path %>
+
+  <h2>イベント</h2>
+  <%= render @events %>
+  <%= link_to  "もっとみる", events_path %>
 
     <h2>メニュー</h2>
     <%= render @menus %>
