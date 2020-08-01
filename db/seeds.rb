@@ -1,14 +1,18 @@
 # Menuのダミーデータ
 # Topicのダミーデータ
 # Userのダミーデータ
+# Eventのダミーデータ
+
 menu_params = []
 topic_params = []
 user_params = []
+event_params = []
 
 # 既存のデータを削除
 Menu.delete_all
 Topic.delete_all
 User.delete_all
+Event.delete_all
 
 100.times do
   # Menuのダミーデータ作成
@@ -31,9 +35,17 @@ User.delete_all
   email = Faker::Internet.unique.email
 
   user_params << { nickname: nickname, image: image, password: password, email: email }
+
+  # Eventのダミーデータ
+  name = Faker::Book.title
+  event_date = Faker::Time.backward(days: 5, period: :morning, format: :short)
+  details = Faker::Types.rb_string
+
+  event_params << { name: name, event_date: event_date, details: details }
 end
 
 # データ登録
 Menu.create!(menu_params)
 Topic.create!(topic_params)
 User.create!(user_params)
+Event.create!(event_params)
