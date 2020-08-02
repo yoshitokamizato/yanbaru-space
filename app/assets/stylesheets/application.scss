@@ -1,97 +1,22 @@
 @import "bootstrap/scss/bootstrap";
+@import "homes";
 
 /*
 *= require_tree .
 *= require_self
 */
 
-
+html{
+  font-size: 20px;
+}
 
 main
  {
   max-width: 800px;
   margin: 0 auto;
 }
-.home_contents h2{
-  text-align: center;
-  margin: 40px 0;
-}
-
-// 大デバイス（デスクトップ, 1200px 未満）
-@media (min-width: 992px) {
-  main {
-    font-size: 1.0rem;
-  }
-}
-
-// ユーザーのカード定義
-.user .card{
-  margin: 10px;
-  width: 130px;
-  height: 160px;
-}
-.user img{
-  width: 128px;
-  height: 110px;
-}
-.user .card-body p{
-  font-size: 10px;
-}
-
-
-//5カラム定義
-.col-15, .col-sm-15, .col-md-15, .col-lg-15 {
-    position: relative;
-    min-height: 1px;
-    padding-right: 10px;
-    padding-left: 10px;
-}
-.col-15 {
-    width: 20%;
-    flex: 0 0 20%;
-    float: left;
-}
-@media (min-width: map-get($grid-breakpoints, sm)) {
-    .col-sm-15 {
-        width: 20%;
-        flex: 0 0 20%;
-        float: left;
-    }
-}
-@media (min-width: map-get($grid-breakpoints,md)) {
-    .col-md-15 {
-        width: 20%;
-        flex: 0 0 20%;
-        float: left;
-    }
-    .col-md-offset-15 {
-        margin-left: 4.3333333%;
-    }
-}
-@media (min-width: map-get($grid-breakpoints, lg)) {
-    .col-lg-15 {
-        width: 20%;
-        flex: 0 0 20%;
-        float: left;
-    }
-}
 
 // 中デバイス（タブレット, 992px 未満）
 @media (max-width: 991.98px) {
-  main {
-    font-size: 1.5rem;
-  }
-}
-// 小デバイス（横向きモバイル, 768px 未満）
-@media (max-width: 900px) {
-  main {
-    font-size: 1.5rem;
-  }
-}
-// @include media-breakpoint-up(sm) {
-// 極小デバイス（縦向きモバイル, 576px 未満）
-@media (max-width: 575.98px) {
-  main {
-    font-size: 1.5rem;
-  }
+  @import "smart-phone";
 }
