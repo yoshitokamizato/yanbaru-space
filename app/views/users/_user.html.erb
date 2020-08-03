@@ -1,5 +1,6 @@
 <div class="user">
   <div class="row">
+    <% @users.each do |user| %>
       <div class="users-card col-lg-2 col-md-12">
         <div class="card">
           <%= image_tag "#{user.image}" ,class:"card-img-top" %>
@@ -8,5 +9,6 @@
           </div>
         </div>
       </div>
+      <% end %>
   </div>
 </div>

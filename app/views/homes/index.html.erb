@@ -11,12 +11,12 @@
     <%= link_to  "もっとみる", events_path %>
   </div>
 
-  <h2>メニュー</h2>
+  <h2 class="text-center">メニュー</h2>
   <%= render @menus %>
   <%= link_to  "もっとみる", menus_path %>
 
   <h2 class="text-center">フリーランス</h2>
-  <%= render @users %>
+  <%= render "users/user" %>
   <div class="text-center">
     <%= link_to "もっとみる", users_path %>
   </div>
