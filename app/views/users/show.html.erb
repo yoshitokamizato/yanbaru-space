@@ -13,6 +13,10 @@
         <img src="<%= session[:google_image] %>">
       <% end %>
     </div>
+
+    <div class="nickname">
+      <label>お名前：</label> <%= @user.nickname %>
+    </div>
     <div class="email">
       <label>Eメールアドレス：</label> <%= @user.email %>
     </div>
