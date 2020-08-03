@@ -5,6 +5,7 @@ ja:
       comment: コメント
       user: ユーザ
       topic: トピック
+      event: イベント
     attributes:
       admin_user:
         email: メールアドレス
