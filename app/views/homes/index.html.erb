@@ -16,7 +16,13 @@
   <%= link_to  "もっとみる", menus_path %>
 
   <h2 class="text-center">フリーランス</h2>
-  <%= render "users/user" %>
+  <div class="user">
+    <div class="container">
+      <div class="row">
+        <%= render @users %>
+      </div>
+    </div>
+  </div>
   <div class="text-center">
     <%= link_to "もっとみる", users_path %>
   </div>
