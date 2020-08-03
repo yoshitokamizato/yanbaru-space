@@ -13,3 +13,24 @@
     }
   }
 }
+#users {
+  // ユーザーのカード定義
+  .user .card{
+    border: solid 1px black;
+    margin: 10px;
+    width: 130px;
+    height: 160px;
+  }
+  .user img{
+    width: 128px;
+    height: 110px;
+  }
+  .user .card-body p{
+    font-size: 10px;
+    word-break: normal;
+  }
+
+  .users-card {
+    text-align: center;
+  }
+}
