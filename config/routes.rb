@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :topics, only: :index
   resources :menus, only: :index
   resources :events, only: :index
+  resources :contact_mails
 end
