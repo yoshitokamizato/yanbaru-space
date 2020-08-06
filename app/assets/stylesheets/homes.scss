@@ -28,4 +28,19 @@
   .users-card {
     text-align: center;
   }
+
+// イベントのカード定義
+  .event .card{
+    border: solid 1px black;
+    margin: 10px;
+    width: 130px;
+    height: 290px;
+  }
+  .event .card-body p{
+    font-size: 12px;
+    word-break: normal;
+  }
+  .events-card {
+    text-align: center;
+  }
 }
