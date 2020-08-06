@@ -23,4 +23,7 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[8,20]
     end
   end
+
+  has_many :skills, through: :user_skills
+  has_many :user_skills
 end
