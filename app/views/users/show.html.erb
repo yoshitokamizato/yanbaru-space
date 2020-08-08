@@ -20,6 +20,13 @@
     <div class="email">
       <label>Eメールアドレス：</label> <%= @user.email %>
     </div>
+
+    <div class="skill">
+      <label>スキル：</label> 
+      <% @skills.each do |skill| %>
+        <%= skill.skill %>
+      <% end %>
+    </div>
   </div>
 
   <div class="btn_group">

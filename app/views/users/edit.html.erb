@@ -20,6 +20,16 @@
     <%= f.text_field :email, :placeholder => "メールアドレスを入力して下さい"%>
   </div>
 
+  <div class="form_group">
+    <label>スキル：</label>
+    <%= f.text_field :skill, list: 'skill_select' %>
+    <datalist id="skill_select">
+      <% @skills.each do |skill| %>
+        <option value="<%= skill.skill %>"></option>
+      <% end %>
+    </datalist>
+  </div>
+
   <div class="btn_group">
     <div class="btn_update">
       <%= f.submit "更新", data: { confirm: "更新しますか？"}, class: "btn btn-success"  %>
