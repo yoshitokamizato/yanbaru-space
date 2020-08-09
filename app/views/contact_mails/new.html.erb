@@ -1,8 +1,7 @@
 <section id="contact_mails">
-  <h5>お問い合わせフォーム</h5>
+  <h5>お問い合わせフォーム</h5><br><br>
 
-  <%= form_with model: @contact do |f| %>
-      
+  <%= form_with model: @contact do |f| %> 
     <form>
       <div class="form-group">
         <label>お名前 <span class="label label-danger">必須</span></label>
@@ -10,21 +9,21 @@
         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
         <div class="help-block with-errors"></div>
       </div>
-
+      <br>
       <div class="form-group">
         <label>返信先メールアドレス <span class="label label-danger">必須</span></label>
         <input type="email" class="form-control" placeholder="(例) xxxxxx@gmail.com" name="contact_mail[email]" required>
         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
         <div class="help-block with-errors"></div>
       </div>
-
+      <br>
       <div class="form-group">
         <label>件名 </label>
         <input type="text" class="form-control" placeholder="(例) ○○について"name="contact_mail[subject]">
         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
         <div class="help-block with-errors"></div>
       </div>
-
+      <br>
       <div class="form-group">
         <label>お問い合わせ内容 <span class="label label-danger">必須</span></label>
         <textarea placeholder="お問い合わせ内容" rows="7" class="form-control" name="contact_mail[message]" required></textarea>
