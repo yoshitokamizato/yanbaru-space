@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @skills = @user.skills
+    @user_skills = @user.user_skills
   end
 
   def edit
@@ -28,6 +28,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :image, :nickname, skills_attributes: [:id, :skill])
+    params.require(:user).permit(:email, :image, :nickname, user_skills_attributes: [:id, :skill, :_destroy])
   end
 end

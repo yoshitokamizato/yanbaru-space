@@ -1,6 +1,6 @@
 <h3>ユーザー編集</h3>
 
-<%= form_with model: @user, local: true do |f| %>
+<%= form_with model: @user,local: true do |f| %>
   <% if session[:google_image] %>
     <p>画像を変更したい場合はGoogleアカウントにて変更してください</p>
   <% else %>
@@ -21,13 +21,10 @@
   </div>
 
   <div class="form_group">
-    <label>スキル：</label>
-    <%= f.text_field :skill, list: 'skill_select' %>
-    <datalist id="skill_select">
-      <% @skills.each do |skill| %>
-        <option value="<%= skill.skill %>"></option>
-      <% end %>
-    </datalist>
+    <%= f.fields_for :user_skills, @user.user_skills.build do |sk| %>
+      <label>スキル：</label>
+      <%= sk.collection_select :skill, Skill.all, :skill, :skill,{:prompt => ""}, {multiple: true} %>
+    <% end %>
   </div>
 
   <div class="btn_group">
