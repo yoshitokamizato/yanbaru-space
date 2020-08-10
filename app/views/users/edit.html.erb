@@ -21,10 +21,8 @@
   </div>
 
   <div class="form_group">
-    <%= f.fields_for :user_skills, @user.user_skills.build do |sk| %>
-      <label>スキル：</label>
-      <%= sk.collection_select :skill, Skill.all, :skill, :skill,{:prompt => ""}, {multiple: true} %>
-    <% end %>
+    <label>スキル：</label>
+    <%= f.collection_check_boxes(:id, Skill.all, :id, :name) %>
   </div>
 
   <div class="btn_group">

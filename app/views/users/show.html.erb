@@ -23,9 +23,7 @@
 
     <div class="skill">
       <label>スキル：</label> 
-      <% @user_skills.each do |user_skill| %>
-        <%= user_skill.skill %>
-      <% end %>
+      <%= @users_skills.join("、") %>
     </div>
   </div>
 
