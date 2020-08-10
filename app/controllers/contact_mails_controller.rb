@@ -15,7 +15,7 @@ class ContactMailsController < ApplicationController
   end
 
   def show
-    @contact = ContactMail.new
+    @contact = ContactMail.find(params[:id])
   end
 
     private
