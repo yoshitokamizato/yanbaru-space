@@ -3,7 +3,8 @@
     <%= image_tag "#{user.image}" ,class:"card-img-top" %>
     <div class="card-body">
       <p class="card-text"><%= user.nickname %></p>
-      <p id="contact_<%= user.id %>" class="btn btn-primary">コンタクト</p>
+      <%= button_to 'コンタクト', new_user_path, method: :get, class: "contact_form btn btn-primary", remote: true %>
+      <div id="form-text"></div>
     </div>
   </div>
 </div>
