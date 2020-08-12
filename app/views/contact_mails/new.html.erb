@@ -1,7 +1,7 @@
 <section id="contact_mails">
   <h5>お問い合わせフォーム</h5><br><br>
 
-  <%= form_with model: @contact, url: contact_mails_path, html: { method: :post } do |f| %> 
+  <%= form_with model: @contact, url: complete_mail_path, html: { method: :get } do |f| %> 
 
     <div class="form-group">
       <label>お名前 <span class="label label-danger">必須</span></label>

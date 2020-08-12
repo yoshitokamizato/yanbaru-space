@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :events, only: :index
   resources :skills 
   resources :contact_mails, only: [:new, :create]
-  # get '/contact_mails', to: 'contact_mails#create', as: 'complete_mail'
+  get '/contact_mails', to: 'contact_mails#create', as: 'complete_mail'
 end

@@ -9,7 +9,7 @@ class ContactMailsController < ApplicationController
     @contact = ContactMail.new(contact_params)
     if @contact.save!
       ContactMailer.contact_mail(@contact).deliver
-      redirect_to contact_mails_path(@contact), notice: "お問い合わせを受け付けました。"
+      redirect_to complete_mail_path(@contact), notice: "お問い合わせを受け付けました。"
     else
       redirect_to new_contact_mail_path, alert: "入力に不備があります。"
     end
