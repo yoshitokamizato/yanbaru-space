@@ -3,8 +3,19 @@
     <%= image_tag "#{user.image}" ,class:"card-img-top" %>
     <div class="card-body">
       <p class="card-text"><%= user.nickname %></p>
-      <%= button_to 'コンタクト', new_user_path, method: :get, class: "contact_form btn btn-primary", remote: true %>
-      <div id="form-text"></div>
+      <p class="btn btn-primary">コンタクト</p>
+      <div id="form-text" >
+        <%= form_with model: @user do |f| %>
+          <div class="form-group">
+            <%= f.text_area :email , class: 'form-control'%>
+          </div>
+          <div class="form-group">
+            <%= f.submit "送信", class: 'btn btn-primary btn-block'%>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'home/home' %>
