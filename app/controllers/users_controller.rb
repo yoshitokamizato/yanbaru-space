@@ -17,8 +17,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
+
     users_skills = UserSkill.where(user_id: current_user.id).pluck(:skill_id)
     selected_skill_ids = params[:user][:id].map!(&:to_i)
+
     selected_skill_ids.each do |skill_id|
       unless users_skills.include?(skill_id)
         UserSkill.create(user_id: current_user.id, skill_id: skill_id)

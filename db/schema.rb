@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2020_08_10_132915) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "contact_mails", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "subject"
+    t.text "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.datetime "event_date"
@@ -89,6 +98,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_132915) do
     t.string "uid"
     t.string "image"
     t.string "nickname"
+    t.string "google_image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
