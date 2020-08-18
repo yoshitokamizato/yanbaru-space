@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    @user = Message.new
   end
 
   def edit
