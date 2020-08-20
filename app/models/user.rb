@@ -26,4 +26,7 @@ class User < ApplicationRecord
 
   has_many :skills, through: :user_skills
   has_many :user_skills
+  has_many :entries
+  has_many :direct_messages
+  has_many :rooms, through: :entries
 end

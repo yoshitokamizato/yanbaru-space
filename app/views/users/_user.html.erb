@@ -4,13 +4,11 @@
     <%= image_tag "#{user.image}" ,class:"card-img-top" %>
     <div class="card-body">
       <p class="card-text"><%= user.nickname %></p>
-    <% unless user.id == current_user.id %>
       <p class="btn btn-primary">コンタクト</p>
-    <% end %>
       <div class="form-text d-none" >
         <%= form_with model: user do |f| %>
           <div class="form-group">
-            <%= f.text_area :email , class: 'form-control'%>
+            <%= f.text_area :email , class: 'form-control', value:""%>
           </div>
           <div class="form-group">
             <%= f.submit "送信", class: 'btn btn-primary btn-block'%>
