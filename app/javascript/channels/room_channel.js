@@ -1,7 +1,7 @@
 import consumer from "./consumer"
 
 document.addEventListener('turbolinks:load', () => {
-  consumer.subscriptions.create("RoomChannel", {
+  const chatChannel = consumer.subscriptions.create("RoomChannel", {
     connected() {
       // Called when the subscription is ready for use on the server
     },
@@ -22,8 +22,7 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 
-
-  $(document).on('keypress', '[data-behavior~=community_speaker]', function(event) {
+  $(document).on('keypress', '#chat-input', function(event) {
     if (event.keyCode === 13) {
       chatChannel.speak(event.target.value);
       event.target.value = '';
