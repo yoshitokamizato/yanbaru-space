@@ -20,6 +20,11 @@
     <div class="email">
       <label>Eメールアドレス：</label> <%= @user.email %>
     </div>
+
+    <div class="skill">
+      <label>スキル：</label> 
+      <%= @users_skills.join("、") %>
+    </div>
   </div>
 
   <div class="btn_group">
