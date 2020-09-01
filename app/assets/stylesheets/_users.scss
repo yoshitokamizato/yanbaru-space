@@ -22,9 +22,13 @@
     height: 160px;
   }
   .user img{
-    width: 128px;
-    height: 110px;
+    width: 100%;
+    height: auto;
   }
+  // .user img{
+  //   width: 128px;
+  //   height: 110px;
+  // }
   .user .card-body p{
     font-size: 10px;
     word-break: normal;
