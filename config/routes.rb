@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'homes#index'
-  resources :users 
+  resources :users do
+    collection do
+      get :my_show
+    end
+  end
+
   resources :topics, only: :index
   resources :menus, only: :index
   resources :events, only: :index
