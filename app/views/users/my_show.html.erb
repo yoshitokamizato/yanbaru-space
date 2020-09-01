@@ -2,7 +2,7 @@
 
 <div class="mypage">
   <div class="title">
-    <h3>フリーランス詳細</h3>
+    <h3>マイページ</h3>
   </div>
 
   <div class="profile">
@@ -27,9 +27,7 @@
     </div>
   </div>
 
-  <% if user_signed_in? && current_user.id == @user[:id] %>
-    <div class="btn_group">
-      <%= link_to '編集', edit_user_path(@user), class:"btn"  %>
-    </div>
-  <% end %>
+  <div class="btn_group">
+    <%= link_to '編集', edit_user_path(@user), class:"btn"  %>
+  </div>
 </div>
