@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def my_show
+    @user = User.find(current_user.id)
+    @users_skills = @user.skills.map {|skill| skill.name}
+  end
+
   def show
     @user = User.find(current_user.id)
     @users_skills = @user.skills.map {|skill| skill.name}
