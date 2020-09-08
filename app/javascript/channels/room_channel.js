@@ -11,8 +11,8 @@ document.addEventListener('turbolinks:load', () => {
     },
 
     received: function(data) {
-    let DirectMessage = document.getElementById('direct_messages')
-    DirectMessage.append(data["direct_message"])
+      let DirectMessage = document.getElementById('direct_messages')
+      return DirectMessage.insertAdjacentHTML('beforeend', data["direct_message"])
     },
 
     speak: function(direct_message) {
