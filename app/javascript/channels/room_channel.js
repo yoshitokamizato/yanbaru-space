@@ -22,11 +22,43 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 
-  $(document).on('keypress', '#chat-input', function(event) {
-    if (event.keyCode === 13) {
-      chatChannel.speak(event.target.value);
-      event.target.value = '';
-      return event.preventDefault();
+    // 「送信」クリック時
+    const FormContent = document.getElementById("chat-input")
+    const BtnContent = document.getElementById("chat-submit")
+    BtnContent.addEventListener("click", function(event){
+      const content = FormContent.value
+      chatChannel.speak(content)
+      FormContent.value = ""
+    })
+
+    // １番したのメッセージを表示させる
+    const documentElement = document.documentElement
+    window.messageContent = FormContent
+    window.scrollToBottom = () => {
+        window.scroll(0, documentElement.scrollHeight)
     }
-  });
+    scrollToBottom()
+
+
+
+    // 内容が無ければボタンを押せなくする
+    const button_activation = () => {
+        if (FormContent.value === '') {
+            BtnContent.classList.add('disabled')
+        } else {
+            BtnContent.classList.remove('disabled')
+        }
+    }
+
+    FormContent.addEventListener('input', () => {
+        button_activation()
+    })
+
+    BtnContent.addEventListener('click', () => {
+        BtnContent.classList.add('disabled')
+    })
+
+
+
+
 })
