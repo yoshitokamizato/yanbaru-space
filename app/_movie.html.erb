@@ -1,0 +1,5 @@
+<% if @watched_movies_id.include?(movie.id) %>
+    <%= render partial: 'movies/watched', locals: { movie: movie} %>
+  <% else %>
+    <%= render partial: 'movies/unwatched', locals: { movie: movie} %>
+<% end %>

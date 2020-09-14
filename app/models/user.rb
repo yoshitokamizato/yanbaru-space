@@ -25,6 +25,9 @@ class User < ApplicationRecord
   end
 
   has_many :user_skills
+  has_many :entries
+  has_many :direct_messages
+  has_many :rooms, through: :entries
   has_many :skills, through: :user_skills
   accepts_nested_attributes_for :user_skills, allow_destroy: true
 end

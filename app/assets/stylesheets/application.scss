@@ -19,6 +19,10 @@ main
   margin: 0 auto;
 }
 
+.edit-link:hover{
+  text-decoration: none;
+}
+
 // 中デバイス（タブレット, 992px 未満）
 @media (max-width: 991.98px) {
   @import "smart-phone";

@@ -1,0 +1,20 @@
+<h2>メッセージ一覧</h2>
+<% @anotherEntries.each do |e| %>
+  <%= link_to room_path(e.room.id),class:"edit-link" do %>
+      <table class="table table-striped">
+          <tr>
+              <td>
+                  <%= image_tag "#{e.user.image}" ,class:"card-img-top", class: "rounded-circle", size: "30x30"  %>
+                  <%= e.user.nickname %>
+              </td>
+              <td>
+                  <% dm = DirectMessage.find_by(id: e.room.direct_message_ids.last).content %>
+                  <%= truncate(dm, length: 10) %>
+              </td>
+              <td>
+                  <h6 style="color: #C0C0C0;" class="text-right"><%= e.updated_at.strftime("%Y/%m/%d %H:%M") %></h6>
+              </td>
+          </tr>
+      </table>
+  <% end %>
+<% end %>

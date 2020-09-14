@@ -14,7 +14,7 @@
     border: solid 1px black;
     margin: 10px;
     width: 130px;
-    height: 160px;
+    height: 200px;
   }
   .user img{
     width: 128px;
@@ -24,10 +24,15 @@
     font-size: 10px;
     word-break: normal;
   }
+  .user .card-body .btn{
+    font-size: 10px;
+    padding: 10px 13px;
+  }
 
   .users-card {
     text-align: center;
   }
+
 
 // イベントのカード定義
   .event .card{

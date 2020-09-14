@@ -18,7 +18,7 @@ module YanbaruSpace
 
     config.generators do |g|
       g.assets false
-      g.skip_routes false  
+      g.skip_routes false
       g.helper false
       g.test_framework :rspec, view_specs: false, helper_specs: false, fixture: true
     end

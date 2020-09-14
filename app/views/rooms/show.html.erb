@@ -1,0 +1,21 @@
+<% @entries.each do |e| %>
+　　<% current_user == e.user ? @class = "current_user" : @class = ""  %>
+　　<% if e.user != current_user %>
+    　<h5 class="text-left <%= @class %>" id="<%= @class %>" style="font-size: 30px;" data-id="<%= e.user.id %>"><%= link_to "@#{e.user.nickname}", user_path(e.user_id) %></h5>
+　　<% else %>
+    　<h5 class="text-left <%= @class %>" id="<%= @class %>" data-id="<%= e.user.id %>"></h5>
+　　<% end %>
+<% end %>
+
+<div id="direct_messages" data-room_id="<%= @room.id %>">
+    <%= render @direct_messages %>
+</div>
+
+<hr>
+<label style="color: black;" id="target" for="chat-input">新しいメッセージを作成</label><br>
+<div class="form-group">
+  <textarea type="text" id="chat-input" class="form-control" rows="4" cols="40"></textarea>
+</div>
+<div class="form-group">
+  <input type="submit" value="送信" id="chat-submit" class="btn btn-primary btn-block disabled" disabled>
+</div>
