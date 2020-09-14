@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :topics, only: :index
   resources :menus, only: :index
   resources :events, only: :index
-  resources :skills
   resources :rooms
+  resources :skills
+  resources :contact_mails, only: [:new, :create]
+  get '/contact_mails', to: 'contact_mails#create', as: 'complete_mail'
 end
