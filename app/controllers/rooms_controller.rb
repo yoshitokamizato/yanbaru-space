@@ -1,13 +1,9 @@
 class RoomsController < ApplicationController
 
   def index
-    @user = current_user
     @currentEntries = current_user.entries
-    myRoomIds = []
-    @currentEntries.each do |entry|
-      myRoomIds << entry.room.id
-    end
-    @anotherEntries = Entry.where(room_id: myRoomIds).where.not(user_id: @user.id).order(created_at: :desc)
+     myRoomIds = @currentEntries.map { |entry| entry.room.id }
+    @anotherEntries = Entry.where(room_id: myRoomIds).where.not(user_id: current_user.id).order(created_at: :desc)
   end
 
   def show
@@ -23,14 +19,20 @@ class RoomsController < ApplicationController
   def create
     @room = Room.create(name: "DM")
     @entry1 = Entry.create(room_id: @room.id, user_id: current_user.id)
-    @entry2 = Entry.create(params.require(:entry).permit(:user_id, :room_id).merge(room_id: @room.id))
-    redirect_to room_path(@room.id)
+    @entry2 = @roome.entries.create(entry_params)
+    redirect_to @room
   end
 
   def destroy
       room = Room.find(params[:id])
       room.destroy
       redirect_to users_rooms_path
+  end
+
+  private
+
+  def entry_params
+    params.require(:entry).permit(:user_id, :room_id)
   end
 
 end

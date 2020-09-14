@@ -13,7 +13,8 @@ document.addEventListener('turbolinks:load', () => {
     received: function(data) {
       let DirectMessage = document.getElementById('direct_messages')
       let FormContent = document.getElementById("chat-input")
-      return [DirectMessage.insertAdjacentHTML('beforeend', data["direct_message"]),FormContent.value = ""]
+      let BtnContent = document.getElementById("chat-submit")
+      return [DirectMessage.insertAdjacentHTML('beforeend', data["direct_message"]),FormContent.value = "",BtnContent.scrollIntoView(false)]
     },
 
     speak: function(direct_message) {
@@ -60,7 +61,6 @@ document.addEventListener('turbolinks:load', () => {
     BtnContent.addEventListener('click', () => {
         BtnContent.classList.add('disabled')
     })
-
 
 
 
