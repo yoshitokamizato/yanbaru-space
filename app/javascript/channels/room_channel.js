@@ -12,7 +12,8 @@ document.addEventListener('turbolinks:load', () => {
 
     received: function(data) {
       let DirectMessage = document.getElementById('direct_messages')
-      return DirectMessage.insertAdjacentHTML('beforeend', data["direct_message"])
+      let FormContent = document.getElementById("chat-input")
+      return [DirectMessage.insertAdjacentHTML('beforeend', data["direct_message"]),FormContent.value = ""]
     },
 
     speak: function(direct_message) {
@@ -28,7 +29,7 @@ document.addEventListener('turbolinks:load', () => {
     BtnContent.addEventListener("click", function(event){
       const content = FormContent.value
       chatChannel.speak(content)
-      FormContent.value = ""
+      BtnContent.disabled = true;
     })
 
     // １番したのメッセージを表示させる
@@ -45,7 +46,9 @@ document.addEventListener('turbolinks:load', () => {
     const button_activation = () => {
         if (FormContent.value === '') {
             BtnContent.classList.add('disabled')
+
         } else {
+            BtnContent.disabled = false;
             BtnContent.classList.remove('disabled')
         }
     }
